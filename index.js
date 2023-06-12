@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 const render = require("./lib/render");
 
 inquirer
@@ -25,6 +26,7 @@ inquirer
       name: "shapeColor",
     },
   ])
-  .then((respone) => {
+  .then((response) => {
     // pass response into render constructor?
+    fs.writeFile(".examples/logo.svg", response, (err) => console.log(err));
   });
