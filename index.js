@@ -33,11 +33,11 @@ inquirer
     let shape;
 
     if (response.logoShape == "Triangle") {
-      shape = new Triangle().render;
+      shape = new Triangle().setColor(response.shapeColor);
     } else if (response.logoShape == "Circle") {
-      shape = new Circle().render;
+      shape = new Circle().setColor(response.shapeColor);
     } else if (response.logoShape == "Square") {
-      shape = new Square().render;
+      shape = new Square().setColor(response.shapeColor);
     }
 
     const shapeString = JSON.stringify(shape);
