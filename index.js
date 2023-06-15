@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const { Triangle, Square, Circle } = require("../lib/shapes");
+const { Triangle, Square, Circle } = require("./lib/shapes");
 
 // Gets user input for logo design
 inquirer
