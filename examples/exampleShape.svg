@@ -1,13 +1,13 @@
 <svg height="300" width="200">
-    <rect x="20" y="10" width="200" height="200" stroke="black" fill="transparent" stroke-width="5"/>
+    <rect x="20" y="10" width="200" height="200" fill="white"/>
     <text x="100" y="100" font-family="Verdana" font-size="35" fill="blue">SVG</text>
 </svg>
 
 <svg height="300" width="200">
-    <circle cx="25" cy="75" r="100" stroke="red" fill="transparent" stroke-width="5"/><text x="2" y="100" font-family="Verdana" font-size="35" fill="black">SVG</text>
+    <circle cx="25" cy="75" r="100" fill="red"/><text x="2" y="100" font-family="Verdana" font-size="35" fill="black">SVG</text>
 </svg>
 
 <svg height="300" width="200">
-    <polygon points="100 30, 200 200, 0 200" fill="green" />
+    <polygon points="150, 18 244, 182 56, 182" fill="blue" />
     <text x="70" y="175" font-family="Verdana" font-size="35" fill="white">SVG</text>
 </svg>

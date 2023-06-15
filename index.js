@@ -1,7 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const render = require("./lib/render");
+const Triangle = require("./lib/shapes");
+const Square = require("./lib/shapes");
+const Circle = require("./lib/shapes");
 
 // Gets user input for logo design
 inquirer
@@ -29,13 +31,22 @@ inquirer
     },
   ])
   .then((response) => {
-    const responseString = JSON.stringify(response);
     // pass response into render constructor?
+    let shape;
 
+    if (response.logoShape == "Triangle") {
+      shape = new Triangle().render;
+    } else if (response.logoShape == "Circle") {
+      shape = new Circle().render;
+    } else if (response.logoShape == "Square") {
+      shape = new Square().render;
+    }
+
+    const shapeString = JSON.stringify(shape);
     // writes result to output folder (logo.svg file)
     fs.writeFile(
       path.join(__dirname, "output", "logo.svg"),
-      responseString,
+      shapeString,
       (err) => (err ? console.log(err) : console.log("Logo created!"))
     );
   });
