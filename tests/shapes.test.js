@@ -1,4 +1,4 @@
-const { Triangle, Square, Circle } = require("../lib/shapes");
+const { SVG, Triangle, Square, Circle } = require("../lib/shapes");
 
 describe("Shapes", () => {
   // Test to render new Triangle
@@ -28,6 +28,17 @@ describe("Shapes", () => {
       shape.setColor("red");
       expect(shape.render()).toEqual(
         '<circle cx="25" cy="75" r="100" fill="red"/>'
+      );
+    });
+  });
+});
+
+describe("SVG", () => {
+  describe("Render logo text", () => {
+    it("Should render text with proper color", () => {
+      const logoText = new SVG("JAL", "blue");
+      expect(logoText.renderText()).toEqual(
+        '<text x="100" y="100" font-family="Verdana" font-size="35" fill="blue">JAL</text>'
       );
     });
   });

@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const { Triangle, Square, Circle } = require("./lib/shapes");
+const { SVG, Triangle, Square, Circle } = require("./lib/shapes");
 
 // Gets user input for logo design
 inquirer
@@ -33,11 +33,11 @@ inquirer
     let shape;
 
     if (response.logoShape == "Triangle") {
-      shape = new Triangle().setColor(response.shapeColor);
+      shape = new Triangle().setColor(response.shapeColor).render();
     } else if (response.logoShape == "Circle") {
-      shape = new Circle().setColor(response.shapeColor);
+      shape = new Circle().setColor(response.shapeColor).render();
     } else if (response.logoShape == "Square") {
-      shape = new Square().setColor(response.shapeColor);
+      shape = new Square().setColor(response.shapeColor).render();
     }
 
     const shapeString = JSON.stringify(shape);
