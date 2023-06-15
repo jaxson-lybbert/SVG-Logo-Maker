@@ -1,13 +1,15 @@
-<svg height="300" width="200">
-    <rect x="20" y="10" width="200" height="200" fill="white"/>
-    <text x="100" y="100" font-family="Verdana" font-size="35" fill="blue">SVG</text>
-</svg>
+<!-- <svg height="200" width="200">
+    <rect x="20" y="20" width="200" height="200" fill="white"/>
+    <text x="50%" y="50%" dominant-baseline="middle" font-family="Verdana" font-size="35" text-anchor="middle">SVG</text>
+</svg> -->
+
+<!-- <svg height="300" width="200">
+    <circle cx="50%" cy="50%" r="100" fill="red"/><text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Verdana" font-size="35" fill="black">SVG</text>
+</svg> -->
+
+
 
 <svg height="300" width="200">
-    <circle cx="25" cy="75" r="100" fill="red"/><text x="2" y="100" font-family="Verdana" font-size="35" fill="black">SVG</text>
-</svg>
-
-<svg height="300" width="200">
-    <polygon points="150, 18 244, 182 56, 182" fill="blue" />
-    <text x="70" y="175" font-family="Verdana" font-size="35" fill="white">SVG</text>
+    <polygon points="0, 300 100, 0 200, 300" fill="blue" />
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Verdana" font-size="35" fill="white">SVG</text>
 </svg>
