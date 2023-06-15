@@ -1,7 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
 const render = require("./lib/render");
 
+// Gets user input for logo design
 inquirer
   .prompt([
     {
@@ -27,6 +29,13 @@ inquirer
     },
   ])
   .then((response) => {
+    const responseString = JSON.stringify(response);
     // pass response into render constructor?
-    fs.writeFile(".examples/logo.svg", response, (err) => console.log(err));
+
+    // writes result to output folder (logo.svg file)
+    fs.writeFile(
+      path.join(__dirname, "output", "logo.svg"),
+      responseString,
+      (err) => (err ? console.log(err) : console.log("Logo created!"))
+    );
   });
