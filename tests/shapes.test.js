@@ -1,6 +1,4 @@
-const Triangle = require("/Users/Jaxson/Desktop/class-repo-activities/week10/Challenges/SVG-Logo-Maker/lib/shapes");
-const Square = require("");
-const Circle = require("");
+const { Triangle, Square, Circle } = require("../lib/shapes");
 
 describe("Shapes", () => {
   // Test to render new Triangle
