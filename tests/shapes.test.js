@@ -33,6 +33,7 @@ describe("Shapes", () => {
   });
 });
 
+// Test  to render text properly
 describe("SVG", () => {
   describe("Render logo text", () => {
     it("Should render text with proper color for a square logo", () => {

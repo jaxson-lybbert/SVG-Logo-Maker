@@ -10,10 +10,19 @@ inquirer
       type: "input",
       message: "Please enter up to three (3) characters:",
       name: "logoText",
+      // Validates user input to make sure it's correct length
+      validate: (logoText) => {
+        if (logoText.length > 3) {
+          console.log("\nCannot enter more than 3 characters");
+          return false;
+        } else {
+          return true;
+        }
+      },
     },
     {
       type: "input",
-      message: "Enter what color you'd like the text to be:",
+      message: "Enter what color you would like the text to be:",
       name: "textColor",
     },
     {
@@ -29,18 +38,35 @@ inquirer
     },
   ])
   .then((response) => {
-    // pass response into render constructor?
+    // Renders the proper text and shape
     let shape;
+    let textRender = new SVG(response.logoText, response.textColor);
+    let finalRender;
 
     if (response.logoShape == "Triangle") {
-      shape = new Triangle().setColor(response.shapeColor).render();
+      shape = new Triangle();
+      shape.setColor(response.shapeColor);
+      finalRender = `<svg height="300" width="200">
+      ${shape.render()}
+      ${textRender.renderText()}
+  </svg>`;
     } else if (response.logoShape == "Circle") {
-      shape = new Circle().setColor(response.shapeColor).render();
+      shape = new Circle();
+      shape.setColor(response.shapeColor);
+      finalRender = `<svg height="300" width="200">
+      ${shape.render()}
+      ${textRender.renderText()}
+  </svg>`;
     } else if (response.logoShape == "Square") {
-      shape = new Square().setColor(response.shapeColor).render();
+      shape = new Square();
+      shape.setColor(response.shapeColor);
+      finalRender = `<svg height="300" width="200">
+      ${shape.render()}
+      ${textRender.renderText()}
+  </svg>`;
     }
 
-    const shapeString = JSON.stringify(shape);
+    const shapeString = finalRender;
     // writes result to output folder (logo.svg file)
     fs.writeFile(
       path.join(__dirname, "output", "logo.svg"),
