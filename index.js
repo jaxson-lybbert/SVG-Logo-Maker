@@ -46,21 +46,24 @@ inquirer
     if (response.logoShape == "Triangle") {
       shape = new Triangle();
       shape.setColor(response.shapeColor);
-      finalRender = `<svg height="300" width="200">
+      finalRender = `<?xml version="1.0" standalone="no"?>
+      <svg height="300" width="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
       ${shape.render()}
       ${textRender.renderText()}
   </svg>`;
     } else if (response.logoShape == "Circle") {
       shape = new Circle();
       shape.setColor(response.shapeColor);
-      finalRender = `<svg height="300" width="200">
+      finalRender = `<?xml version="1.0" standalone="no"?>
+      <svg height="300" width="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
       ${shape.render()}
       ${textRender.renderText()}
   </svg>`;
     } else if (response.logoShape == "Square") {
       shape = new Square();
       shape.setColor(response.shapeColor);
-      finalRender = `<svg height="300" width="200">
+      finalRender = `<?xml version="1.0" standalone="no"?>
+      <svg height="300" width="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
       ${shape.render()}
       ${textRender.renderText()}
   </svg>`;
